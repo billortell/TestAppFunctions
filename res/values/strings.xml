@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Wallaper anzeigen</string>
+    <string name="btn1_text">Aktuelles Wallpaper anzeigen</string>
+    <string name="btnsms_text">Eine SMS senden</string>
+    <string name="strblubb">Dein aktuelles Wallpaper</string>
+    <string name="app_name">TestApp</string>
+</resources>
