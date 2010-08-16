@@ -6,6 +6,9 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,7 +16,7 @@ import android.widget.Toast;
 public class sensortest extends Activity {
 
 	SensorManager sensorManager;
-	TextView txtsensx, txtsensy, txtsensz, txtsenaccx, txtsenaccy, txtsenaccz = null;
+	TextView txtsensx, txtsensy, txtsensz, txtsenaccx, txtsenaccy, txtsenaccz, txtgps = null;
 
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -28,12 +31,13 @@ public class sensortest extends Activity {
 		txtsenaccy = (TextView) findViewById(R.id.txtsensoraccy);
 		txtsenaccz = (TextView) findViewById(R.id.txtsensoraccz);
 
+		txtgps = (TextView) findViewById(R.id.txtgps);
+
 		sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 
 		sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION) , SensorManager.SENSOR_DELAY_NORMAL);
 		sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) , SensorManager.SENSOR_DELAY_NORMAL);
 		sensorManager.registerListener(sensorListener, sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE) , SensorManager.SENSOR_DELAY_NORMAL);
-
 	}
 
 	public void onDestroy()

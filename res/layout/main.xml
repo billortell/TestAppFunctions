@@ -19,4 +19,9 @@
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
 		android:text="Sensors" />
+
+  <Button android:id="@+id/btngps"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+		android:text="GPS Tools" />
 </LinearLayout>
