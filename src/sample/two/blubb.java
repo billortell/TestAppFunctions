@@ -1,5 +1,5 @@
 package sample.two;
-
+w
 import android.app.Activity;
 import android.app.WallpaperManager;
 import android.graphics.Color;
