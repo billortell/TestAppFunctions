@@ -33,10 +33,16 @@ public class startUp extends Activity {
 			}
 		});
 
-
+        Button btnsensors = (Button) findViewById(R.id.btnsensor);
+        btnsensors.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				Intent myIntent = new Intent(startUp.this, sensortest.class);
+				startActivity(myIntent);
+			}
+		});
 
         TelephonyManager bla = (TelephonyManager) getSystemService(startUp.TELEPHONY_SERVICE);
         String coun = bla.getVoiceMailNumber();
-        Toast.makeText(startUp.this, coun, Toast.LENGTH_LONG).show();
+        Toast.makeText(startUp.this, "Deine Mailbox: " + coun, Toast.LENGTH_LONG).show();
     }
 }

@@ -15,4 +15,8 @@
     	android:layout_height="wrap_content"
 		android:text="@string/btnsms_text" />
 
+  <Button android:id="@+id/btnsensor"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+		android:text="Sensors" />
 </LinearLayout>

@@ -4,5 +4,5 @@
     <string name="btn1_text">Aktuelles Wallpaper anzeigen</string>
     <string name="btnsms_text">Eine SMS senden</string>
     <string name="strblubb">Dein aktuelles Wallpaper</string>
-    <string name="app_name">TestApp</string>
+    <string name="app_name">TestAppFunctions</string>
 </resources>
