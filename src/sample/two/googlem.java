@@ -50,6 +50,12 @@ public class googlem extends MapActivity
 
 	}
 
+	public void onDestroy()
+	{
+		super.onDestroy();
+		locationManager.removeUpdates(locationListener);
+	}
+
 	private LocationListener locationListener = new LocationListener() {
 
 		public void onStatusChanged(String provider, int status, Bundle extras) {
