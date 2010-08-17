@@ -139,7 +139,6 @@ public class smsmessage extends Activity {
 
 	public void onActivityResult(int reqCode, int resultCode, Intent data) {
 		super.onActivityResult(reqCode, resultCode, data);
-
 		switch (reqCode) {
 		case 1:
 			ContentResolver cr = getContentResolver();
@@ -176,6 +175,8 @@ public class smsmessage extends Activity {
 		}
 
 	}
+
+
 
 	protected void showPhoneNumbers(final String[] numbers)
 	{

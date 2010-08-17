@@ -24,4 +24,9 @@
     	android:layout_width="fill_parent"
     	android:layout_height="wrap_content"
 		android:text="GPS Tools" />
+
+  <Button android:id="@+id/btngoogle"
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+		android:text="Maps" />
 </LinearLayout>

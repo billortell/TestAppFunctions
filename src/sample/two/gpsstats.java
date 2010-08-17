@@ -1,14 +1,13 @@
 package sample.two;
 
 import java.io.IOException;
-import java.math.MathContext;
 import java.util.List;
 import java.util.Locale;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.GpsSatellite;
 import android.location.GpsStatus;
 import android.location.GpsStatus.Listener;
 import android.location.Location;
@@ -28,7 +27,7 @@ public class gpsstats extends Activity {
 	Location loc;
 	Double lon,lat,alt = null;
 	Geocoder geo;
-	Button btnaddr;
+	Button btnaddr, btnggl;
 
 	public void onCreate(Bundle savedInstanceState)
 	{
@@ -48,11 +47,20 @@ public class gpsstats extends Activity {
 						Toast.makeText(gpsstats.this, buildAddress, Toast.LENGTH_LONG).show();
 					}
 				} catch (IOException e) {
-					Toast.makeText(gpsstats.this, "Kein Internet", Toast.LENGTH_SHORT).show();
+					Toast.makeText(gpsstats.this, "Fehler bei der Abfrage... Versuchs nochmal.", Toast.LENGTH_SHORT).show();
 				}
 
 
 
+			}
+		});
+
+		btnggl = (Button) findViewById(R.id.btngglmaps);
+		btnggl.setOnClickListener(new OnClickListener() {
+
+			public void onClick(View v) {
+				Intent myIntent = new Intent(gpsstats.this, googlem.class);
+				startActivity(myIntent);
 			}
 		});
 
@@ -114,6 +122,8 @@ public class gpsstats extends Activity {
 				btnaddr.setEnabled(true);
 			}
 
+			float speed = location.getSpeed();
+
 			lon = location.getLongitude();
 			alt = location.getAltitude();
 			lat = location.getLatitude();
@@ -121,7 +131,7 @@ public class gpsstats extends Activity {
 			longitude.setText(Double.toString(lon));
 			altitude.setText(Double.toString(alt));
 			latitude.setText(Double.toString(lat));
-			geschw.setText(Float.toString(location.getSpeed()) + " m/s");
+			geschw.setText(Float.toString(location.getSpeed()) + " m/s (" + Float.toString((float) (speed / 0.278)) + " km/h)");
 		}
 	};
 }

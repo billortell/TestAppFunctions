@@ -6,11 +6,12 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 import android.view.View.OnClickListener;
 
 public class startUp extends Activity {
     /** Called when the activity is first created. */
+
+	public String we = "lala";
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
@@ -49,8 +50,17 @@ public class startUp extends Activity {
 			}
 		});
 
+        Button btngoogle = (Button) findViewById(R.id.btngoogle);
+        btngoogle.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				Intent myIntent = new Intent(startUp.this, googlem.class);
+				startActivity(myIntent);
+			}
+		});
+
         TelephonyManager bla = (TelephonyManager) getSystemService(startUp.TELEPHONY_SERVICE);
-        String coun = bla.getVoiceMailNumber();
+        @SuppressWarnings("unused")
+		String coun = bla.getVoiceMailNumber();
         //Toast.makeText(startUp.this, "Deine Mailbox: " + coun, Toast.LENGTH_LONG).show();
     }
 }

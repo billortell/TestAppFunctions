@@ -4,7 +4,7 @@
   android:layout_width="wrap_content"
   android:layout_height="wrap_content">
 
-	
+
 <TableLayout android:id="@+id/TableLayout01" android:layout_width="wrap_content" android:layout_height="wrap_content"><TextView android:id="@+id/TextView01" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Koordinaten:"></TextView><TableRow android:id="@+id/TableRow01" android:layout_width="wrap_content" android:layout_height="wrap_content"><TextView android:id="@+id/TextView02" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Longitude:"></TextView>
 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/txtlongitude"></TextView>
 </TableRow>
@@ -17,7 +17,11 @@
 </TableRow>
 <TableRow android:id="@+id/TableRow04" android:layout_width="wrap_content" android:layout_height="wrap_content" android:paddingBottom="10dip"><TextView android:id="@+id/TextView05" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Geschwindigkeit:"></TextView>
 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/txtgeschw"></TextView>
-</TableRow><Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Adresse anzeigen" android:id="@+id/btnadress"></Button>
+</TableRow>
+
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Adresse anzeigen" android:id="@+id/btnadress"></Button>
+<Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Adresse anzeigen (GoogleMaps)" android:id="@+id/btngglmaps"></Button>
+
 </TableLayout>
 
 </LinearLayout>
