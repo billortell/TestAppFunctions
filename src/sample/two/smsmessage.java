@@ -39,12 +39,12 @@ public class smsmessage extends Activity {
 		setContentView(R.layout.smsmessage);
 
 
-		// Den Empf‰nger und die Nachricht holen
+		// Den Empf√§nger und die Nachricht holen
 		final EditText oEmpf = (EditText) findViewById(R.id.txtEmpf);
 		final EditText oMessage = (EditText) findViewById(R.id.txtMessage);
 		final TextView oState = (TextView) findViewById(R.id.txtstate);
 
-		oEmpf.setText("Hier klicken f¸r Kontake.");
+		oEmpf.setText("Hier klicken f√ºr Kontake.");
 		// Helper initialisieren
 		oHelper = new generalhelper(smsmessage.this);
 
@@ -54,7 +54,7 @@ public class smsmessage extends Activity {
 			public void onClick(View v) {
 				if (TextUtils.isEmpty(oEmpf.getText())) {
 					Toast.makeText(smsmessage.this,
-							"Kein Empf‰nger angegeben!", Toast.LENGTH_SHORT)
+							"Kein Empf√§nger angegeben!", Toast.LENGTH_SHORT)
 							.show();
 					return;
 				}
@@ -134,14 +134,16 @@ public class smsmessage extends Activity {
 			}
 		}, new IntentFilter(ACTION_SMS_SENT));
 
-
 	}
+
 
 	public void onActivityResult(int reqCode, int resultCode, Intent data) {
 		super.onActivityResult(reqCode, resultCode, data);
 		switch (reqCode) {
 		case 1:
-			ContentResolver cr = getContentResolver();
+		    if(resultCode == RESULT_OK)
+		    {
+		    ContentResolver cr = getContentResolver();
 			Cursor cur = cr.query(data.getData(), null, null, null, null);
 
 			if (cur.getCount() > 0) {
@@ -171,6 +173,7 @@ public class smsmessage extends Activity {
 				}
 			}
 			cur.close();
+		    }
 			break;
 		}
 
@@ -181,7 +184,7 @@ public class smsmessage extends Activity {
 	protected void showPhoneNumbers(final String[] numbers)
 	{
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle("Bitte w‰hlen Sie eine Nummer");
+		builder.setTitle("Bitte w√§hlen Sie eine Nummer");
 		builder.setItems(numbers, new DialogInterface.OnClickListener() {
 		    public void onClick(DialogInterface dialog, int item) {
 		        EditText oEmpf = (EditText) findViewById(R.id.txtEmpf);
